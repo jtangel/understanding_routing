@@ -5,11 +5,15 @@ def hello_world():
     return 'Hello World!'  
 
 
-@app.route('/say/<name>')
+@app.route('/say/<string: name>')
 def say(name):
     return f'Hello {name}'
 
-@app.route('/repeat/<int:num>/<name>')
+@app.route('/dojo')
+def dojo():
+    return "Dojo!"
+
+@app.route('/repeat/<int:num>/<string: name>')
 def repeat(num, name):
     return f'{name * num}'
 
